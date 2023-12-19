@@ -43,7 +43,7 @@ Get-WmiObject -Query "SELECT * FROM __Namespace WHERE Name='sms'" -Namespace roo
 
 # Remove Services from Registry
 # Set $CurrentPath to services registry keys
-$CurrentPath = “HKLM:\SYSTEM\CurrentControlSet\Services”
+$CurrentPath = "HKLM:\SYSTEM\CurrentControlSet\Services"
 Remove-Item -Path $CurrentPath\CCMSetup -Force -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path $CurrentPath\CcmExec -Force -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path $CurrentPath\smstsmgr -Force -Recurse -ErrorAction SilentlyContinue
@@ -51,7 +51,7 @@ Remove-Item -Path $CurrentPath\CmRcService -Force -Recurse -ErrorAction Silently
 
 # Remove SCCM Client from Registry
 # Update $CurrentPath to HKLM/Software/Microsoft
-$CurrentPath = “HKLM:\SOFTWARE\Microsoft”
+$CurrentPath = "HKLM:\SOFTWARE\Microsoft"
 Remove-Item -Path $CurrentPath\CCM -Force -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path $CurrentPath\CCMSetup -Force -Recurse -ErrorAction SilentlyContinue
 Remove-Item -Path $CurrentPath\SMS -Force -Recurse -ErrorAction SilentlyContinue
